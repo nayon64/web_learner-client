@@ -6,14 +6,14 @@ const Header = () => {
 	const [isLight, setIsLight]=useState(true)
 	return (
 		<div className='flex items-center justify-between max-w-7xl mx-auto py-3'>
-			<Link className='flex items-center'><img style={{width:'50px'}} src={logo} alt="" /><h4 className='text-3xl font-bold text-gray-700 ml-2'>Web <span className='text-rose-500'>Learner</span></h4></Link>
+			<Link to="/" className='flex items-center'><img style={{width:'50px'}} src={logo} alt="" /><h4 className='text-3xl font-bold text-gray-700 ml-2'>Web <span className='text-rose-500'>Learner</span></h4></Link>
 			
 			<div className='flex items-center'>
 				<div className='w-96 text-2xl font-semibold flex items-center justify-between'>
-					<Link >Home</Link>
-					<Link >Courses</Link>
-					<Link >FAQ</Link>
-					<Link >Blog</Link>
+					<Link to="/home">Home</Link>
+					<Link to="/courses">Courses</Link>
+					<Link to="/home">FAQ</Link>
+					<Link to="/blogs">Blogs</Link>
 				</div>
 				<div onClick={()=>setIsLight(!isLight)} className='text-xl ml-8'>
 					{

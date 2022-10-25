@@ -10,7 +10,7 @@ const Home = () => {
 				<h4 className='text-3xl tracking-widest my-5 font-semibold text-rose-600'>Basic to Advance</h4>
 				<p className='text-lg text-gray-500'>Learn more and more and Build up your knowledge. Make your dream website , That is you want.</p>
 				<div className='mt-10'>
-					<Link className='py-3 px-8 rounded-md bg-rose-500 text-white font-semibold text-xl'>Go To Courses</Link>
+					<Link to="/courses" className='py-3 px-8 rounded-md bg-rose-500 text-white font-semibold text-xl'>Go To Courses</Link>
 				</div>
 			</div>
 			<div>
