@@ -10,7 +10,7 @@ const Login = () => {
 				<h2 className='mb-4 text-center text-2xl font-semibold text-rose-500'>Log In to Your Account</h2>
 				<form className='flex flex-col justify-center'>
 					<label className='text-gray-700 font-semibold'>Email Address </label>
-					<input className='border w-full py-2 px-4 mb-4' name="name" type="email" placeholder='Enter your email' required/>
+					<input className='border w-full py-2 px-4 mb-4' name="email" type="email" placeholder='Enter your email' required/>
 					<label className='text-gray-700 font-semibold'>Password </label>
 					<input className='border w-full py-2 px-4' name="password" type="password" placeholder='Enter your password' required />
 					
