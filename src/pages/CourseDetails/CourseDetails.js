@@ -1,42 +1,59 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { FaStar,FaStarHalfAlt,FaLanguage } from "react-icons/fa";
+import { Link, useLoaderData } from 'react-router-dom';
+import {FaRegCheckSquare ,FaBook,FaVideo,FaPenSquare} from "react-icons/fa";
+import CourseDetailsHeader from '../../components/CourseDetailsHeader/CourseDetailsHeader';
 
 const CourseDetails = () => {
 	const course = useLoaderData()
-	const {title,about,rating,totalReviews,author,lastUpdate,language,picture}=course
+	const {syllabus,price,courseInfo,about}=course
 	return (
-		<div className='bg-gray-800 '>
-			<div className='max-w-7xl text-white mx-auto py-10 grid grid-cols-2 gap-8'>
-				<div className='my-auto py-4'>
-					<h1 className='text-4xl font-bold mb-3'>{title}</h1>
-					<p className='mb-3'>{about}</p>
-					<div className='flex items-center mb-4' >
-						<p className='text-yellow-600 font-bold text-xl'>{rating}</p>
-						<span className='flex text-yellow-500 mx-2'>
-							<FaStar />
-							<FaStar />
-							<FaStar />
-							<FaStar />
-							<FaStarHalfAlt />
-						</span>
-						<p className='text-gray-400'>({totalReviews})</p>
-					</div>
-					<div className='flex items-center'>
-						<h4>Created by :</h4>
-						<img className='w-9 mx-3' src={author.authorUrl} alt="" />
-						<div>
-							<h4>{author.name}</h4>
-							<p>Insturctor</p>
+		<div >
+			<div className='bg-gray-800 mb-12'>
+				<CourseDetailsHeader course={course}></CourseDetailsHeader>
+			</div>
+			<div className='grid lg:grid-cols-5 gap-8 max-w-7xl mx-auto px-6'>
+				<div className='col-span-3'>
+					<div className='border-2 p-5 rounded-2xl col-span-3 mb-8'>
+						<h1 className='text-3xl font-bold text-rose-600 mb-6'>This course includes:</h1>
+						<div  className='flex justify-evenly flex-wrap'>
+							<div className='border-2 rounded-xl py-3 px-6 mt-5'>
+								<FaBook  className='text-5xl text-rose-600'/>
+								<h2 className='mt-4 text-2xl text-gray-700'>{ courseInfo?.quizes?  courseInfo.quizes: "0"} <span>Quizs</span></h2>
+							</div>
+							<div className='border-2 rounded-xl py-3 px-6 mt-5'>
+								<FaVideo  className='text-5xl text-rose-600'/>
+								<h2 className='mt-4 text-2xl text-gray-700'>{ courseInfo?.videos?  courseInfo.videos: "0"} <span>Videos</span></h2>
+							</div>
+							<div className='border-2 rounded-xl py-3 px-6 mt-5'>
+								<FaPenSquare  className='text-5xl text-rose-600'/>
+								<h2 className='mt-4 text-2xl text-gray-700'>{ courseInfo?.assignments?  courseInfo.assignments: "0"} <span>Assignments</span></h2>
+							</div>
 						</div>
+						
 					</div>
-					<div className='flex items-center mt-4' >
-						<h3>Last Update : <span>{lastUpdate}</span></h3>
-						<div className='flex text-xl ml-14'><FaLanguage className='text-3xl'/> <span className='ml-3'> { language}</span></div>
+					
+					<div className='border-2 p-5 rounded-2xl mb-8'>
+						<h1 className='text-3xl font-bold text-rose-600 mb-2'>What you will learn:</h1>
+						<ul>
+							{
+								syllabus.map((items, id) => <li
+									key={id}
+									className='flex items-center'><FaRegCheckSquare /> <span className='ml-3'>{items}</span></li>)
+
+							}
+						</ul>
+					</div>
+					<div className='border-2 p-5 rounded-2xl '>
+						<h1 className='text-3xl font-bold text-rose-600 mb-2'>About Course:</h1>
+						<p>{about}</p>
 					</div>
 				</div>
-				<div className='flex justify-center'>
-					<img className='max-w-lg h-full' src={picture} alt="" />
+				<div className=' col-span-2 hidden lg:block'>
+					<div className='bg-gray-200 p-5 pb-9 rounded-xl'>
+						<h2 className='text-rose-600 font-bold text-3xl mb-4'>Buy This Course</h2>
+						<h3 className='text-2xl font-semibold mb-6 text-gray-700'>Prices : $<span>{price}</span></h3>
+						<Link className='bg-rose-600 py-3 px-10 text-white text-xl font-semibold rounded-lg' to>Buy Now</Link>
+					</div>
 				</div>
 			</div>
 		</div>
