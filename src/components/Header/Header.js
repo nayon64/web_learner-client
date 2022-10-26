@@ -5,7 +5,8 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const Header = () => {
 	const [isLight, setIsLight] = useState(true)
-	const {user}= useContext(AuthContext)
+	const { user } = useContext(AuthContext)
+	console.log(user)
 	
 	return (
 		<div className='flex items-center justify-between max-w-7xl mx-auto py-3 px-4'>
@@ -16,7 +17,7 @@ const Header = () => {
 					<Link to="/home">Home</Link>
 					<Link to="/courses">Courses</Link>
 					<Link to="/home">FAQ</Link>
-					<Link to="/blogs">Blogs</Link>
+					<Link to="/blogs">Blogs{ user.email}</Link>
 				</div>
 				<div onClick={()=>setIsLight(!isLight)} className='text-xl ml-8'>
 					{

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/img/logo.png";
-import { FaGoogle,FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
 
@@ -71,13 +70,8 @@ const Register = () => {
 					<label  className='text-gray-700 font-semibold' >Password </label>
 					<input  className='border w-full py-2 px-4 mb-4' name="password" type="password" placeholder='Enter your password' required />
 					<label className='text-gray-700 font-semibold'>Confirmd Password </label>
-					<input className='border w-full py-2 px-4' name="confirmdPassword" type="password" placeholder='Again Enter your password' required /><button className='py-2 px-5 mb-2 bg-rose-500 rounded-md  text-white font-semibold mt-4' type="submit">Register</button>
+					<input className='border w-full py-2 px-4' name="confirmdPassword" type="password" placeholder='Again Enter your password' required /><button className='py-2 px-5 mb-2 hover:bg-gray-600 transition-all duration-500 bg-rose-500 rounded-md  text-white font-semibold mt-4' type="submit">Register</button>
 				</form>
-				<h1 className='text-center my-2 font-bold text-2xl text-rose-500 '>OR</h1>
-				<div className='flex justify-center mb-4'>
-					<Link className='mr-2 text-3xl text-blue-500 font-bold'><FaGoogle/></Link>
-					<Link className='ml-2 text-3xl text-gray-500 font-bold'><FaGithub/></Link>
-				</div>
 				<p>Already have an account? <Link to="/login" className='text-rose-400'>Login</Link></p>
 			</div>
 		</div>
