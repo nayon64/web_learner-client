@@ -10,7 +10,7 @@ const Login = () => {
 	
 	const googleProvider = new GoogleAuthProvider();
 
-	const { singInWithProvider, singIn } = useContext(AuthContext)
+	const { singInWithProvider, singIn, } = useContext(AuthContext)
 	
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -60,8 +60,12 @@ const Login = () => {
 				</form>
 				<h1 className='text-center my-2 font-bold text-2xl text-rose-500 '>OR</h1>
 				<div className='flex justify-center mb-4'>
-					<FaGoogle onClick={logInWithGoogle} className='mr-2 text-3xl text-blue-500 font-bold'/>
-					<FaGithub className='ml-2 text-3xl text-gray-500 font-bold'/>
+					<div className='hover:bg-rose-400 p-2 transition-all duration-500 rounded-full mr-2'>
+						<FaGoogle onClick={logInWithGoogle} className='text-3xl text-blue-500 font-bold cursor-pointer'/>
+					</div>
+					<div className='hover:bg-rose-400 p-2 transition-all duration-500 rounded-full ml-2'>
+						<FaGithub className=' text-3xl text-gray-500 font-bold cursor-pointer ' />
+					</div>
 				</div>
 				<p>You are new in Web Learner? <Link to="/register" className='text-rose-400'>Register</Link></p>
 			</div>
