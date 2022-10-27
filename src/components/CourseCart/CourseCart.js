@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CourseCart = ({ course }) => {
 	const { picture, title,author,rating,price,totalReviews } = course
 	return (
-		<div className='border cursor-pointer'>
+		<div className='border cursor-pointer max-w-sm mx-auto w-full'>
 			<Link to={`/courses/${course._id}`}>
 				<div className='h-44 w-full'>
 					<img className='h-44 w-full' src={picture} alt="" />

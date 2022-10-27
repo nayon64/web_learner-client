@@ -5,10 +5,10 @@ import CourseCart from '../../components/CourseCart/CourseCart';
 const Courses = () => {
 	const courses = useLoaderData()
 	return (
-		<div className='grid grid-cols-4 max-w-7xl mx-auto gap-5'>
-			<div className='col-span-3'>
+		<div className='grid md:grid-cols-4 max-w-7xl mx-auto px-4'>
+			<div className='md:col-span-3'>
 				<h1 className='text-center my-3 mb-5 text-4xl font-bold text-gray-700'>Web <span className='text-rose-600'>Learner</span> Popular Courses</h1>
-				<div className='grid grid-cols-3 gap-5'>
+				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 pr-4 '>
 					{
 						courses.map(course => 
 							<CourseCart
@@ -19,7 +19,7 @@ const Courses = () => {
 				}
 				</div>
 			</div>
-			<div>
+			<div className='mx-auto'>
 				<div className='sticky top-0'>
 					<h1 className='text-center mt-5 mb-4 text-2xl font-semibold text-gray-800'>Choose your <span className='text-rose-600'>Course</span></h1>
 					<ul>
