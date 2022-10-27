@@ -10,7 +10,7 @@ const Error404 = () => {
                   <p className='max-w-md mt-3'>The page your are looking for might have been romoved had its name changed or is temporarily unavaliable.</p>
                 </div>
                 
-              </div>
+            </div>
 		</div>
 	);
 };

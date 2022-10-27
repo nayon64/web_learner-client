@@ -1,12 +1,14 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import logo from "../../assets/img/logo.png"
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Login = () => {
+	const location = useLocation();
+	const navigate=useNavigate()
 	const [error, setError] = useState('')
+	const from = location.state?.from?.pathname || '/';
 	
 	const googleProvider = new GoogleAuthProvider();
 
@@ -23,6 +25,9 @@ const Login = () => {
 				const user = result.user
 				console.log(user)
 				setError('')
+				if (user.uid) {
+					navigate(from, {replace: true})
+				}
 				form.reset()
 			})
 			.catch(error => {
@@ -37,6 +42,9 @@ const Login = () => {
 			const user = result.user
 				console.log(user)
 				setError('')
+				if (user.uid) {
+					navigate(from, {replace: true})
+				}
 			})
 		.catch(()=>{})
 	}

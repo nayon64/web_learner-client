@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../layout/Main/Main';
 import Blogs from '../../pages/Blogs/Blogs';
+import Checkout from '../../pages/Checkout/Checkout';
 import CourseDetails from '../../pages/CourseDetails/CourseDetails';
 import Courses from '../../pages/Courses/Courses';
 import Error404 from '../../pages/Error404/Error404';
@@ -9,6 +10,7 @@ import FAQ from '../../pages/FAQ/FAQ';
 import Home from '../../pages/Home/Home';
 import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
+import PrivetRoutes from '../PrivetRoutes/PrivetRoutes';
 
 export const Routes = createBrowserRouter([
 	{
@@ -52,6 +54,10 @@ export const Routes = createBrowserRouter([
 			{
 				path: "/register",
 				element: <Register></Register>
+			},
+			{
+				path: "/checkout",
+				element:<PrivetRoutes><Checkout></Checkout></PrivetRoutes>
 			}
 		]
 	}

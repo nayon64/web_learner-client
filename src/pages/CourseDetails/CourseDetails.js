@@ -50,7 +50,7 @@ const CourseDetails = () => {
 				</div>
 				<div className=' col-span-2 hidden lg:block'>
 					<div className='bg-gray-200 p-5 pb-9 rounded-xl'>
-						<h2 className='text-rose-600 font-bold text-3xl mb-4'>Buy This Course</h2>
+						<Link to="/checkout" className='text-rose-600 font-bold text-3xl mb-4'>Get premium access.</Link>
 						<h3 className='text-2xl font-semibold mb-6 text-gray-700'>Prices : $<span>{price}</span></h3>
 						<Link className='bg-rose-600 py-3 px-10 text-white text-xl font-semibold rounded-lg' to>Buy Now</Link>
 					</div>
