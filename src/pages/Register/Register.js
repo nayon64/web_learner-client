@@ -4,9 +4,22 @@ import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-	const { createUser, updateUserProfile } = useContext(AuthContext)
+	const { createUser, updateUserProfile,verifyEmail } = useContext(AuthContext)
 	const [Error,setError]=useState('')
 
+
+	const handleVarifyEmail = () => {
+		verifyEmail()
+			.then(() => {
+				toast.success("Email Verification send your email . Please Check!!")
+				setError('')
+			})
+			.catch(error => {
+				const errorMessage = error.message;
+				setError(errorMessage)
+			})
+		
+	}
 	const handleSubmit = (e) => { 
 		e.preventDefault()
 		const form = e.target
@@ -62,20 +75,17 @@ const Register = () => {
 
 		createUser(email, password)
 			.then(()=> {
-				
 				const profile={displayName:name,photoURL:userUrl}
 				updateUserProfile(profile)
 					.then(() => {
-						toast.success("Profile Update")
 						setError('')
+						handleVarifyEmail()
 					})
 					.catch(error => {
 						const errorMessage = error.message;
 						setError(errorMessage)
 				})
 				form.reset()
-				toast.success("Congratulation , You create a new account . Please login")
-				
 			})
 			.catch(error => {
 				const errorMessage = error.message;
