@@ -35,7 +35,6 @@ const Login = () => {
 		singIn(email, password)
 			.then(result => {
 				const user = result.user
-				console.log(user)
 				setError('')
 				if (user.uid) {
 					navigate(from, {replace: true})
@@ -46,7 +45,6 @@ const Login = () => {
 			.catch(error => {
 				const errorMassage = error.message
 				setError(errorMassage)
-				console.log(errorMassage)
 		})
 	}
 
@@ -72,7 +70,6 @@ const Login = () => {
 		singInWithProvider(githubProvider)
 			.then(result => {
 			const user = result.user
-				console.log(user)
 				setError('')
 				toast.success("Login Successfull")
 				if (user.uid) {

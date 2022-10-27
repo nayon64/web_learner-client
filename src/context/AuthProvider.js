@@ -55,18 +55,21 @@ const AuthProvider = ({ children }) => {
 	// updata user name and user image 
 
 	const updateUserProfile = (profile) => {
+		setLoading(true)
 		return updateProfile(auth.currentUser, profile);
 	}
 
 	// update password with email
 	
 	const updatePassword = (email) => {
+		setLoading(true)
 		return sendPasswordResetEmail(auth,email)
 	}
 
 
 	// verify email address 
-	const verifyEmail = () =>{
+	const verifyEmail = () => {
+		setLoading(true)
         return sendEmailVerification(auth.currentUser);
     }
 
