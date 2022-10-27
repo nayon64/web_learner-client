@@ -14,7 +14,7 @@ const CourseDetails = () => {
 
 			{/* course header section  */}
 
-			<div className='bg-gray-800 mb-12'>
+			<div className='bg-gray-800 mb-12 z-10'>
 
 				<CourseDetailsHeader  course={course}></CourseDetailsHeader>
 			</div>

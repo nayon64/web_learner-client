@@ -30,7 +30,7 @@ const Courses = () => {
 					<h1 className='text-center mt-5 mb-4 text-2xl font-semibold text-gray-800'>Choose your <span className='text-rose-600'>Course</span></h1>
 					<ul>
 						{
-							courses.map(course => <Link key={course._id} to={`/courses/${course._id}`}><li className='bg-gray-100 text-semibold cursor-pointer p-2 mb-3 hover:bg-rose-200 hover:text-gray-700 transition-all duration-200 text-rose-500'>{course.title}</li></Link>)
+							courses.map(course => <Link key={course._id} to={`/courses/${course._id}`}><li className='bg-gray-100 order-3 text-semibold cursor-pointer p-2 mb-3 hover:bg-rose-200 hover:text-gray-700 transition-all duration-200 text-rose-500'>{course.title}</li></Link>)
 						}
 
 					</ul>

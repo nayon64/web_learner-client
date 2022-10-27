@@ -154,7 +154,7 @@ const Navbar = () => {
 
             {/* navbar active is small device */}
             {isMenuOpen && (
-              <div className="absolute  top-0 left-0 w-full" onClick={() => setIsMenuOpen(false)}>
+              <div className="absolute z-20 top-0 left-0 w-full " onClick={() => setIsMenuOpen(false)}>
                 <div className="p-5 bg-rose-100 border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
