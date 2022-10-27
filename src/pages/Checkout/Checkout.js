@@ -15,7 +15,7 @@ const Checkout = () => {
 		toast.success('Congratulaion! Your are successfuly enroll this course')
 	}
 	return (
-		<div className='flex px-3'>
+		<div className='flex px-3 mt-6'>
 			<div className='border-2 mx-auto p-4 text-center rounded-lg'>
 				<h1 className=' font-bold text-rose-500 text-2xl'>CheckOut</h1>
 				<h2 className='text-xl font-bold text-gray-700'>Course : <span className='text-md text-gray-500 font-semibold'>{title}</span></h2>
