@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link} from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Register = () => {
 	const { createUser, updateUserProfile } = useContext(AuthContext)
-	
+	const [Error,setError]=useState('')
 
 	const handleSubmit = (e) => { 
 		e.preventDefault()
@@ -61,21 +61,20 @@ const Register = () => {
 		// user create by email and password 
 
 		createUser(email, password)
-			.then(resutl => {
-				const user = resutl.user
+			.then(()=> {
+				
 				const profile={displayName:name,photoURL:userUrl}
 				updateUserProfile(profile)
 					.then(() => {
 						toast.success("Profileupdat")
-						console.log(user)
-						
-				})
+						setError('')
+					})
+				.catch(error=>{setError(error.massage)})
 				form.reset()
 				toast.success("Congratulation , You create a new account . Please login")
-				console.log(user)
-
+				
 			})
-			.catch(error => console.error("error", error))
+			.catch(error => {setError(error.massage)})
 		
 
 	}
@@ -96,6 +95,9 @@ const Register = () => {
 					<label className='text-gray-700 font-semibold'>Confirmd Password </label>
 					<input className='border w-full py-2 px-4' name="confirmdPassword" type="password" placeholder='Again Enter your password' required /><button className='py-2 px-5 mb-2 hover:bg-gray-600 transition-all duration-500 bg-rose-500 rounded-md  text-white font-semibold mt-4' type="submit">Register</button>
 				</form>
+				{
+					Error && <p>{Error}</p>
+				}
 				<p>Already have an account? <Link to="/login" className='text-rose-400'>Login</Link></p>
 			</div>
 		</div>

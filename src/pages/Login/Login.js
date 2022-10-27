@@ -55,7 +55,6 @@ const Login = () => {
 		singInWithProvider(googleProvider)
 			.then(result => {
 			const user = result.user
-				console.log(user)
 				setError('')
 				toast.success("Login Successfull")
 				if (user.uid) {
@@ -67,7 +66,7 @@ const Login = () => {
 	}
 
 	// sign in with github 
-	
+
 	const logInWithGoithub = () => {
 		singInWithProvider(githubProvider)
 			.then(result => {
