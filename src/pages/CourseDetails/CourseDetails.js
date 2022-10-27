@@ -8,11 +8,20 @@ const CourseDetails = () => {
 	const {syllabus,price,courseInfo,about}=course
 	return (
 		<div >
+
+			{/* course header section  */}
+
 			<div className='bg-gray-800 mb-12'>
 				<CourseDetailsHeader course={course}></CourseDetailsHeader>
 			</div>
+
+			{/* course body section  */}
+
 			<div className='grid lg:grid-cols-5 gap-8 max-w-7xl mx-auto px-6'>
 				<div className='col-span-3'>
+
+					{/* course modules  */}
+
 					<div className='border-2 p-5 rounded-2xl col-span-3 mb-8'>
 						<h1 className='text-3xl font-bold text-rose-600 mb-6'>This course includes:</h1>
 						<div  className='flex justify-evenly flex-wrap'>
@@ -32,6 +41,8 @@ const CourseDetails = () => {
 						
 					</div>
 					
+					{/* what we learn section  */}
+
 					<div className='border-2 p-5 rounded-2xl mb-8'>
 						<h1 className='text-3xl font-bold text-rose-600 mb-2'>What you will learn:</h1>
 						<ul>
@@ -43,11 +54,16 @@ const CourseDetails = () => {
 							}
 						</ul>
 					</div>
+
+					{/* course details section  */}
 					<div className='border-2 p-5 rounded-2xl '>
 						<h1 className='text-3xl font-bold text-rose-600 mb-2'>About Course:</h1>
-						<p>{about}</p>
+						<p>{about?about:"No Deatails"}</p>
 					</div>
 				</div>
+
+				{/* course checkout page link section  */}
+				
 				<div className=' col-span-2 hidden lg:block'>
 					<div className='bg-gray-200 p-5 pb-9 rounded-xl'>
 						<Link className='text-rose-600 font-bold text-3xl mb-4'>Select This Course</Link>

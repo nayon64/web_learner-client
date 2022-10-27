@@ -12,6 +12,8 @@ const Navbar = () => {
   return (
     <div className="">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+
+        {/* this navbar active in large device */}
         <div className="relative flex items-center justify-between">
           <Link
             to="/"
@@ -87,13 +89,20 @@ const Navbar = () => {
             
             <li>
              {
-              user && user.uid ?
-                <span className='flex'>
+                user && user.uid ?
+                  
+                  <span className='flex'>
+
+                    {/* user photo  */}
+
                   <span className='cursor-pointer flex justify-center"' title={user.displayName? user.displayName:"No Name"}>
                     {
                         user?.photoURL? <img className='w-10 rounded-full' src={user?.photoURL} alt="" />:<FaUserAlt className='text-2xl'/>
                       }
-                  </span> 
+                    </span> 
+                    
+                    {/* log out btn  */}
+                    
                   <Link
                       onClick={logOut}
                         className="inline-flex items-center justify-center h-10 ml-2 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
@@ -142,6 +151,8 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+
+            {/* navbar active is small device */}
             {isMenuOpen && (
               <div className="absolute  top-0 left-0 w-full" onClick={() => setIsMenuOpen(false)}>
                 <div className="p-5 bg-rose-100 border rounded shadow-sm">
