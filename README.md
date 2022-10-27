@@ -1,7 +1,6 @@
 # Web Learner
 
-Live project link : [web-learner-18919.web.app](web-learner-18919.web.app).
-
+Live project link : [https://web-learner-18919.web.app/](https://web-learner-18919.web.app/)
 ## About this Web site
 
 This is a online web development site. There any one purches course.
