@@ -10,7 +10,7 @@ const Login = () => {
 	const navigate=useNavigate()
 	const [error, setError] = useState('')
 	const [emails,setEmails]=useState('')
-	const { singInWithProvider, singIn,updatePassword  } = useContext(AuthContext)
+	const { singInWithProvider, singIn,updatePassword , setLoading} = useContext(AuthContext)
 
 	// select location path 
 
@@ -45,7 +45,10 @@ const Login = () => {
 			.catch(error => {
 				const errorMassage = error.message
 				setError(errorMassage)
-		})
+			})
+			.finally(() => {
+                setLoading(false);
+            })
 	}
 
 	// sign in with google 
@@ -61,7 +64,10 @@ const Login = () => {
 				}
 
 			})
-		.catch(()=>{})
+			.catch(() => { })
+			.finally(() => {
+                setLoading(false);
+            })
 	}
 
 	// sign in with github 
@@ -77,7 +83,10 @@ const Login = () => {
 				}
 
 			})
-		.catch(()=>{})
+			.catch(() => { })
+			.finally(() => {
+                setLoading(false);
+            })
 	}
 
 	const handleEmail = (e) => {
@@ -88,6 +97,7 @@ const Login = () => {
 		setError("")
 		toast.success("Send reset password link in your email")
 		updatePassword(emails)
+		setLoading(false);
 	}
 
 	return (
