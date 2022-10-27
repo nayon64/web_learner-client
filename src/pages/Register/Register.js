@@ -66,15 +66,21 @@ const Register = () => {
 				const profile={displayName:name,photoURL:userUrl}
 				updateUserProfile(profile)
 					.then(() => {
-						toast.success("Profileupdat")
+						toast.success("Profile Update")
 						setError('')
 					})
-				.catch(error=>{setError(error.massage)})
+					.catch(error => {
+						const errorMessage = error.message;
+						setError(errorMessage)
+				})
 				form.reset()
 				toast.success("Congratulation , You create a new account . Please login")
 				
 			})
-			.catch(error => {setError(error.massage)})
+			.catch(error => {
+				const errorMessage = error.message;
+				setError(errorMessage)
+			})
 		
 
 	}
@@ -96,7 +102,7 @@ const Register = () => {
 					<input className='border w-full py-2 px-4' name="confirmdPassword" type="password" placeholder='Again Enter your password' required /><button className='py-2 px-5 mb-2 hover:bg-gray-600 transition-all duration-500 bg-rose-500 rounded-md  text-white font-semibold mt-4' type="submit">Register</button>
 				</form>
 				{
-					Error && <p>{Error}</p>
+					Error && <p className='text-rose-500 text-sm'>{Error}</p>
 				}
 				<p>Already have an account? <Link to="/login" className='text-rose-400'>Login</Link></p>
 			</div>
