@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
 
@@ -68,8 +68,8 @@ const Register = () => {
 			<div className='bg-gray-200 max-w-sm p-8 mx-auto rounded-2xl'>
 				<h2 className='mb-4 text-center text-2xl font-semibold text-rose-500'>Create Your Account</h2>
 				<form onSubmit={handleSubmit} className='flex flex-col justify-center'>
-					<label className='text-gray-700 font-semibold'>Your Name </label>
-					<input className='border w-full py-2 px-4 mb-4' name="name" type="text" placeholder='Enter your name' required/>
+					<label className='text-gray-700 font-semibold'>Your Full Name </label>
+					<input className='border w-full py-2 px-4 mb-4' name="name" type="text" placeholder='Enter your full name' required/>
 					<label className='text-gray-700 font-semibold'>Your Photo Url</label>
 					<input className='border w-full py-2 px-4 mb-4' name="userUrl" type="text" placeholder='Enter your photo url' />
 					<label className='text-gray-700 font-semibold'>Email Address </label>

@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -12,6 +12,8 @@ const Login = () => {
 	const from = location.state?.from?.pathname || '/';
 	
 	const googleProvider = new GoogleAuthProvider();
+
+	const githubProvider = new GithubAuthProvider();
 
 	const { singInWithProvider, singIn, } = useContext(AuthContext)
 	
@@ -52,6 +54,20 @@ const Login = () => {
 			})
 		.catch(()=>{})
 	}
+	const logInWithGoithub = () => {
+		singInWithProvider(githubProvider)
+			.then(result => {
+			const user = result.user
+				console.log(user)
+				setError('')
+				toast.success("Login Successfull")
+				if (user.uid) {
+					navigate(from, {replace: true})
+				}
+
+			})
+		.catch(()=>{})
+	}
 
 	return (
 		<div className='p-4'>
@@ -75,7 +91,7 @@ const Login = () => {
 						<FaGoogle onClick={logInWithGoogle} className='text-3xl text-blue-500 font-bold cursor-pointer'/>
 					</div>
 					<div className='hover:bg-rose-400 p-2 transition-all duration-500 rounded-full ml-2'>
-						<FaGithub className=' text-3xl text-gray-500 font-bold cursor-pointer ' />
+						<FaGithub onClick={logInWithGoithub} className=' text-3xl text-gray-500 font-bold cursor-pointer ' />
 					</div>
 				</div>
 				<p>You are new in Web Learner? <Link to="/register" className='text-rose-400'>Register</Link></p>
