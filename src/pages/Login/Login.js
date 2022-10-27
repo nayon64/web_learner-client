@@ -43,7 +43,6 @@ const Login = () => {
 
 	return (
 		<div className=''>
-			<Link to="/" className='flex items-center '><img style={{ width: '50px' }} src={logo} alt="" /><h4 className='text-3xl font-bold text-gray-700 ml-2'>Web <span className='text-rose-500'>Learner</span></h4></Link>
 			<div className='bg-gray-200 max-w-sm p-8 mx-auto rounded-2xl'>
 				<h2 className='mb-4 text-center text-2xl font-semibold text-rose-500'>Log In to Your Account</h2>
 				<form onSubmit={handleSubmit} className='flex flex-col justify-center'>
