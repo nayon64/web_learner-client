@@ -32,7 +32,6 @@ const Navbar = () => {
                 return { borderBottom: isActive ?"2px solid gray" :undefined}
               }}			  
                 aria-label="Our product"
-                title="Our product"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Home
@@ -45,7 +44,6 @@ const Navbar = () => {
                   return { borderBottom: isActive ?"2px solid gray" :undefined}
                 }}
                 aria-label="Our product"
-                title="Our product"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Courses
@@ -58,7 +56,6 @@ const Navbar = () => {
                     return { borderBottom: isActive ?"2px solid gray" :undefined}
                   }}
                 aria-label="Product pricing"
-                title="Product pricing"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 FAQ
@@ -71,7 +68,6 @@ const Navbar = () => {
                   return { borderBottom: isActive ?"2px solid gray" :undefined}
                 }}
                 aria-label="About us"
-                title="About us"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Blogs
@@ -208,7 +204,6 @@ const Navbar = () => {
                             return { borderBottom: isActive ?"2px solid gray" :undefined}
                           }}	
                           aria-label="Our product"
-                          title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Home
@@ -221,7 +216,6 @@ const Navbar = () => {
                             return { borderBottom: isActive ?"2px solid gray" :undefined}
                           }}	
                           aria-label="Our product"
-                          title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Courses
@@ -234,7 +228,6 @@ const Navbar = () => {
                             return { borderBottom: isActive ?"2px solid gray" :undefined}
                           }}	
                           aria-label="Product pricing"
-                          title="Product pricing"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           FAQ
@@ -247,7 +240,6 @@ const Navbar = () => {
                             return { borderBottom: isActive ?"2px solid gray" :undefined}
                           }}	
                           aria-label="About us"
-                          title="About us"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Blogs
