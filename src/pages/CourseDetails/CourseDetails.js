@@ -1,24 +1,33 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import {FaRegCheckSquare ,FaBook,FaVideo,FaPenSquare} from "react-icons/fa";
+import {FaRegCheckSquare ,FaBook,FaVideo,FaPenSquare, FaFilePdf} from "react-icons/fa";
 import CourseDetailsHeader from '../../components/CourseDetailsHeader/CourseDetailsHeader';
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const CourseDetails = () => {
 	const course = useLoaderData()
 	const {syllabus,price,courseInfo,about}=course
 	return (
-		<div >
+		<div ref={ref} className="relative">
+			
 
 			{/* course header section  */}
 
 			<div className='bg-gray-800 mb-12'>
-				<CourseDetailsHeader course={course}></CourseDetailsHeader>
+
+				<CourseDetailsHeader  course={course}></CourseDetailsHeader>
 			</div>
 
 			{/* course body section  */}
 
 			<div className='grid lg:grid-cols-5 gap-8 max-w-7xl mx-auto px-6'>
 				<div className='col-span-3'>
+					<div className='absolute mx-auto top-3  ' title='Dawnload to pdf'>
+						<Pdf targetRef={ref} filename="code-example.pdf">
+							{({ toPdf }) => <button onClick={toPdf}><FaFilePdf className='text-white text-4xl'/></button>}
+						</Pdf>
+					</div>
 
 					{/* course modules  */}
 
@@ -63,7 +72,7 @@ const CourseDetails = () => {
 				</div>
 
 				{/* course checkout page link section  */}
-				
+
 				<div className=' col-span-2 hidden lg:block'>
 					<div className='bg-gray-200 p-5 pb-9 rounded-xl'>
 						<Link className='text-rose-600 font-bold text-3xl mb-4'>Select This Course</Link>

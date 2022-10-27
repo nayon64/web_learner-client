@@ -2,12 +2,15 @@ import React from 'react';
 import { FaStar,FaStarHalfAlt,FaLanguage, FaUser, } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
+
 const CourseDetailsHeader = ({course}) => {
 	const {title,about,rating,totalReviews,author,lastUpdate,language,picture,price}=course
 	return (
-		<div>
+		<div >
 			<div className='max-w-7xl text-white mx-auto py-10 grid lg:grid-cols-2 gap-8 p-4'>
+				
 				<div className='my-auto order-2 lg:order-1 py-4'>
+					
 					<h1 className='text-4xl font-bold mb-3'>{title}</h1>
 					<p className='mb-3'>{about.length > 150 ? <span>{ about.slice(0,150)+ "..."}</span>: about}</p>
 					<div className='flex items-center mb-4' >
