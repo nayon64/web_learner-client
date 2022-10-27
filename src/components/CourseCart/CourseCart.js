@@ -7,9 +7,15 @@ const CourseCart = ({ course }) => {
 	return (
 		<div className='border cursor-pointer max-w-sm mx-auto w-full'>
 			<Link to={`/courses/${course._id}`}>
+
+				{/* course cart image  */}
+
 				<div className='h-44 w-full'>
 					<img className='h-44 w-full' src={picture} alt="" />
 				</div>
+
+				{/* course cart body  */}
+				
 				<div className='p-2'>
 					<h1 className='text-xl font-bold text-gray-700'>{title}</h1>
 					<p className='text-base text-gray-600'>{author.name}</p>

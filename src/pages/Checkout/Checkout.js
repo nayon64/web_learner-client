@@ -4,10 +4,13 @@ import { toast } from 'react-toastify';
 
 const Checkout = () => {
 	const course = useLoaderData()
-	console.log(course)
 	const { title, price } = course
-	const discoutnPrice = parseInt(price * .10);
-	const totalPrice = price - discoutnPrice;
+
+	// discount per course 10% 
+
+	const discountPrice = parseInt(price * .10);
+
+	const totalPrice = price - discountPrice;
 	const handleEnroll = () => {
 		toast.success('Congratulaion! Your are successfuly enroll this course')
 	}
@@ -17,13 +20,18 @@ const Checkout = () => {
 				<h1 className=' font-bold text-rose-500 text-2xl'>CheckOut</h1>
 				<h2 className='text-xl font-bold text-gray-700'>Course : <span className='text-md text-gray-500 font-semibold'>{title}</span></h2>
 
+				{/* course price summary  */}
+
 				<div className='max-w-xs mx-auto px-4 my-3 text-gray-600'>
 					<h2 className='text-xl text-gray-800 font-bold text-left'>Summary</h2>
 					<p className='flex justify-between'>Original price : <span> ${price}</span></p>
-					<p className='flex justify-between'>Discounts : <span> -${discoutnPrice}</span></p>
+					<p className='flex justify-between'>Discounts : <span> -${discountPrice}</span></p>
 					<div className='border bg-gray-600'></div>
 					<p className='flex justify-between'>Total : <span> ${totalPrice}</span></p>
-					</div>
+				</div>
+
+				{/* course enroll btn  */}
+
 				<button onClick={handleEnroll} className='p-2 bg-rose-500 rounded text-white mt-3'>Enroll Now</button>
 			</div>
 

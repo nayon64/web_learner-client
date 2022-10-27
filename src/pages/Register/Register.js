@@ -15,33 +15,50 @@ const Register = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 		const confirmdPassword = form.confirmdPassword.value;
-		console.log(name, userUrl, email, password, confirmdPassword)
+
+		// check uppercase 
 
 		if (!/.*?[A-Z]/.test(password)) {
 			toast.error('Please enter one Uppercase in password')
 			return
 		}
+
+		// check lowercase 
+
 		if (!/.*?[a-z]/.test(password)) {
 			toast.error('Please enter one lowercase in password')
 			return
 		}
+
+		// check number 
+
 		if (!/.*?[0-9]/.test(password)) {
 			toast.error('Please enter one number in password')
 			return
 		}
+
+		// check special caracter 
+
 		if (!/.*?[#?!@$%^&*-]/.test(password)) {
 			toast.error('Please enter one special caracter in password')
 			return
 		}
+
+		// check length 
+
 		if (!/.{8,}/.test(password)) {
 			toast.error('Please enter eight caracters in password')
 			return
 		}
+
+		// check password and confirmd password 
+
 		if (password !== confirmdPassword) {
 			toast.error("Your password and confirmd password doesn't mathc")
 			return
 		}
 
+		// user create by email and password 
 
 		createUser(email, password)
 			.then(resutl => {
@@ -71,7 +88,7 @@ const Register = () => {
 					<label className='text-gray-700 font-semibold'>Your Full Name </label>
 					<input className='border w-full py-2 px-4 mb-4' name="name" type="text" placeholder='Enter your full name' required/>
 					<label className='text-gray-700 font-semibold'>Your Photo Url</label>
-					<input className='border w-full py-2 px-4 mb-4' name="userUrl" type="text" placeholder='Enter your photo url' />
+					<input className='border w-full py-2 px-4 mb-4' name="userUrl" type="text" placeholder='Enter your photo url' required/>
 					<label className='text-gray-700 font-semibold'>Email Address </label>
 					<input className='border w-full py-2 px-4 mb-4' name="email" type="email" placeholder='Enter your email' required/>
 					<label  className='text-gray-700 font-semibold' >Password </label>

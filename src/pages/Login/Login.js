@@ -9,14 +9,22 @@ const Login = () => {
 	const location = useLocation();
 	const navigate=useNavigate()
 	const [error, setError] = useState('')
+	const { singInWithProvider, singIn, } = useContext(AuthContext)
+
+	// select location path 
+
 	const from = location.state?.from?.pathname || '/';
 	
+	// google provider 
+
 	const googleProvider = new GoogleAuthProvider();
+
+	// github Provider 
 
 	const githubProvider = new GithubAuthProvider();
 
-	const { singInWithProvider, singIn, } = useContext(AuthContext)
-	
+	// sing in with email and password 
+
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		const form = e.target;
@@ -40,6 +48,9 @@ const Login = () => {
 				console.log(errorMassage)
 		})
 	}
+
+	// sign in with google 
+
 	const logInWithGoogle = () => {
 		singInWithProvider(googleProvider)
 			.then(result => {
@@ -54,6 +65,9 @@ const Login = () => {
 			})
 		.catch(()=>{})
 	}
+
+	// sign in with github 
+	
 	const logInWithGoithub = () => {
 		singInWithProvider(githubProvider)
 			.then(result => {

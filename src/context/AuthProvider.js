@@ -23,22 +23,37 @@ const AuthProvider = ({ children }) => {
 		return ()=>unSuscribe()
 	},[])
 
+
+	// create user by email and password 
+
 	const createUser = (email, password) => {
 		setLoading(true)
 		return createUserWithEmailAndPassword(auth,email,password)
 	}
+
+	// Log In by email and password 
+
 	const singIn = (email, password) => {
 		setLoading(true)
 		return signInWithEmailAndPassword(auth,email,password)
 	}
+
+	// Log in by provider 
+
 	const singInWithProvider = (provider) => {
 		setLoading(true)
 		return signInWithPopup(auth,provider)
 	}
+
+	// user Log Out 
+
 	const logOut = () => {
 		setLoading(true)
 		return signOut(auth)
 	}
+
+	// updata user name and user image 
+
 	const updateUserProfile = (profile) => {
 		return updateProfile(auth.currentUser, profile);
 	}
