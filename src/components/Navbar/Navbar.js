@@ -107,7 +107,6 @@ const Navbar = () => {
                       onClick={logOut}
                         className="inline-flex items-center justify-center h-10 ml-2 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
                         aria-label="Sign up"
-                        title="Sign up"
                         >			
                         Log Out
                   </Link>       
@@ -121,7 +120,6 @@ const Navbar = () => {
 						      }}
                 	className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
                 	aria-label="Sign up"
-                	title="Sign up"
               		>			
                 	Log in
             </NavLink>
@@ -263,7 +261,6 @@ const Navbar = () => {
                             onClick={logOut}
                               className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
                               aria-label="Sign up"
-                              title="Sign up"
                               >			
                               Log Out
                           </Link>       
@@ -273,7 +270,6 @@ const Navbar = () => {
                           to="/login"
                             className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
-                            title="Sign up"
                             >			
                             Log in
                         </Link>
