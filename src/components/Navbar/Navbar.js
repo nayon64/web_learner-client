@@ -5,7 +5,7 @@ import logo from "../../assets/img/logo.png"
 import { AuthContext } from '../../context/AuthProvider';
 
 const Navbar = () => {
-	const { user, userToggle,serUserToggle} = useContext(AuthContext)
+	const { user,logOut} = useContext(AuthContext)
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLight, setIsLight] = useState(true)
 
@@ -25,10 +25,10 @@ const Navbar = () => {
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
               <NavLink
-				to="/home"
-				style={({ isActive}) => {
-					return { borderBottom: isActive ?"2px solid gray" :undefined}
-				}}			  
+              to="/home"
+              style={({ isActive}) => {
+                return { borderBottom: isActive ?"2px solid gray" :undefined}
+              }}			  
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
@@ -39,9 +39,9 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/courses"
-				style={({ isActive}) => {
-					return { borderBottom: isActive ?"2px solid gray" :undefined}
-				}}
+                style={({ isActive}) => {
+                  return { borderBottom: isActive ?"2px solid gray" :undefined}
+                }}
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
@@ -52,9 +52,9 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/faq"
-				style={({ isActive}) => {
-					return { borderBottom: isActive ?"2px solid gray" :undefined}
-				}}
+                style={({ isActive}) => {
+                    return { borderBottom: isActive ?"2px solid gray" :undefined}
+                  }}
                 aria-label="Product pricing"
                 title="Product pricing"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
@@ -65,9 +65,9 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/blogs"
-				style={({ isActive}) => {
-					return { borderBottom: isActive ?"2px solid gray" :undefined}
-				}}
+                style={({ isActive}) => {
+                  return { borderBottom: isActive ?"2px solid gray" :undefined}
+                }}
                 aria-label="About us"
                 title="About us"
                 className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
@@ -76,50 +76,47 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-				<div onClick={()=>setIsLight(!isLight)} className='font-medium' >
-					{
-						isLight ? <div className='bg-gray-200  rounded p-2 flex items-center justify-center cursor-pointer' ><FaSun/></div>
-						:
-						<div className='bg-gray-800 rounded cursor-pointer p-2 flex items-center justify-center text-white'><FaMoon/></div>
-					}
-				</div>
+              <div onClick={()=>setIsLight(!isLight)} className='font-medium' >
+                {
+                  isLight ? <div className='bg-gray-200  rounded p-2 flex items-center justify-center cursor-pointer' ><FaSun/></div>
+                  :
+                  <div className='bg-gray-800 rounded cursor-pointer p-2 flex items-center justify-center text-white'><FaMoon/></div>
+                }
+              </div>
             </li>
             
             <li>
              {
-				user && user.uid ?
-					<span  onClick={()=>serUserToggle(!userToggle)} className='cursor-pointer flex justify-center"' title={user.displayName? user.displayName:"No Name"}>
-						{
-							user?.photoURL? <img className='w-10 rounded-full' src={user?.photoURL} alt="" />:<FaUserAlt className='text-2xl'/>
-						}
-					</span>
-					:
-					<div className='mx-auto'>
+              user && user.uid ?
+                <span className='flex'>
+                  <span className='cursor-pointer flex justify-center"' title={user.displayName? user.displayName:"No Name"}>
+                    {
+                        user?.photoURL? <img className='w-10 rounded-full' src={user?.photoURL} alt="" />:<FaUserAlt className='text-2xl'/>
+                      }
+                  </span> 
+                  <Link
+                      onClick={logOut}
+                        className="inline-flex items-center justify-center h-10 ml-2 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
+                        aria-label="Sign up"
+                        title="Sign up"
+                        >			
+                        Log Out
+                  </Link>       
+                </span>
+                :
 						
 						<NavLink
-                		to="/login"
-						style={({ isActive}) => {
-							return { color: isActive ?"yellow" :undefined}
-						}}
-                		className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
-                		aria-label="Sign up"
-                		title="Sign up"
-              			>			
-                			Log in
-             			</NavLink>
+                to="/login"
+						    style={({ isActive}) => {
+							    return { color: isActive ?"yellow" :undefined}
+						      }}
+                	className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
+                	aria-label="Sign up"
+                	title="Sign up"
+              		>			
+                	Log in
+            </NavLink>
 						
-						<NavLink
-						 to="/register"
-						style={({ isActive}) => {
-							return { color: isActive ?"yellow" :undefined}
-						}}
-                		className="ml-4 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
-               			aria-label="Sign up"
-                		title="Sign up"
-             			>
-               		 		Sign up
-             			</NavLink>
-					</div>
 					}
             </li>
           </ul>
@@ -159,14 +156,14 @@ const Navbar = () => {
                         <img style={{ width: '50px' }} src={logo} alt="" />
                         <h4 className='text-3xl hidden sm:block font-bold text-gray-700 ml-2'>Web <span className='text-rose-500'>Learner</span></h4>
                       </Link>
-					</div>
-					<div onClick={()=>setIsLight(!isLight)} className='font-medium' >
-					{	
-					 isLight ? <div className='bg-gray-200  rounded-full p-2 flex items-center justify-center cursor-pointer' ><FaSun/></div>
-					:
-					<div className='bg-gray-800 rounded-full cursor-pointer p-2 flex items-center justify-center text-white'><FaMoon></FaMoon></div>
-					}
-					</div>
+                    </div>
+                    <div onClick={()=>setIsLight(!isLight)} className='font-medium' >
+                    {	
+                    isLight ? <div className='bg-gray-200  rounded-full p-2 flex items-center justify-center cursor-pointer' ><FaSun/></div>
+                    :
+                    <div className='bg-gray-800 rounded-full cursor-pointer p-2 flex items-center justify-center text-white'><FaMoon></FaMoon></div>
+                    }
+                    </div>
                     <div>
                       <button
                         aria-label="Close Menu"
@@ -186,76 +183,91 @@ const Navbar = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <Link
+                        {
+                          user && user.uid &&
+                          <span  className='cursor-pointer flex justify-center"' title={user.displayName ? user.displayName : "No Name"}>
+                            {
+                              user?.photoURL? <img className='w-10 rounded-full' src={user?.photoURL} alt="" />:<FaUserAlt className='text-2xl'/>
+                            }
+                          </span> 
+                        }
+                      </li>
+                      <li>
+                        <NavLink
                           to="/home"
+                          style={({ isActive}) => {
+                            return { borderBottom: isActive ?"2px solid gray" :undefined}
+                          }}	
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Home
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/courses"
+                          style={({ isActive}) => {
+                            return { borderBottom: isActive ?"2px solid gray" :undefined}
+                          }}	
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Courses
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
-                          to="/"
+                        <NavLink
+                          to="/faq"
+                          style={({ isActive}) => {
+                            return { borderBottom: isActive ?"2px solid gray" :undefined}
+                          }}	
                           aria-label="Product pricing"
                           title="Product pricing"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           FAQ
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/blogs"
+                          style={({ isActive}) => {
+                            return { borderBottom: isActive ?"2px solid gray" :undefined}
+                          }}	
                           aria-label="About us"
                           title="About us"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Blogs
-                        </Link>
+                        </NavLink>
                       </li>
-					  <li>
-             			{
-							user && user.uid ?
-								<span  onClick={()=>serUserToggle(!userToggle)} className='cursor-pointer flex justify-center"' title={user.displayName? user.displayName:"No Name"}>
-									{
-										user?.photoURL? <img className='w-10 rounded-full' src={user?.photoURL} alt="" />:<FaUserAlt className='text-2xl'/>
-									}
-								</span>
-								:
-								<div className='mx-auto'>
-
-									<Link
-             			   		to="/login"
-             			   		className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
-             			   		aria-label="Sign up"
-             			   		title="Sign up"
-             			 			>			
-             			   			Log in
-             						</Link>
-
-									<Link
-             			  			 to="/register"
-             			   		className="ml-4 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
-             			  			aria-label="Sign up"
-             			   		title="Sign up"
-             						>
-             			  		 		Sign up
-             						</Link>
-								</div>
-								}
-            		</li>
+                    <li>
+                      {
+                        user && user.uid ?
+                        <>
+                          <Link
+                            onClick={logOut}
+                              className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
+                              aria-label="Sign up"
+                              title="Sign up"
+                              >			
+                              Log Out
+                          </Link>       
+                        </>
+                        :
+                        <Link
+                          to="/login"
+                            className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
+                            aria-label="Sign up"
+                            title="Sign up"
+                            >			
+                            Log in
+                        </Link>
+                        }
+                    </li>
 					  
                     </ul>
                   </nav>

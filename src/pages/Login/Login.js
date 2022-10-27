@@ -2,6 +2,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Login = () => {
@@ -29,6 +30,7 @@ const Login = () => {
 					navigate(from, {replace: true})
 				}
 				form.reset()
+				toast.success("Login Successfull")
 			})
 			.catch(error => {
 				const errorMassage = error.message
@@ -42,15 +44,17 @@ const Login = () => {
 			const user = result.user
 				console.log(user)
 				setError('')
+				toast.success("Login Successfull")
 				if (user.uid) {
 					navigate(from, {replace: true})
 				}
+
 			})
 		.catch(()=>{})
 	}
 
 	return (
-		<div className=''>
+		<div className='p-4'>
 			<div className='bg-gray-200 max-w-sm p-8 mx-auto rounded-2xl'>
 				<h2 className='mb-4 text-center text-2xl font-semibold text-rose-500'>Log In to Your Account</h2>
 				<form onSubmit={handleSubmit} className='flex flex-col justify-center'>
