@@ -7,7 +7,7 @@ import CourseDetails from '../../pages/CourseDetails/CourseDetails';
 import Courses from '../../pages/Courses/Courses';
 import Error404 from '../../pages/Error404/Error404';
 import FAQ from '../../pages/FAQ/FAQ';
-import Home from '../../pages/Home/Home';
+import Home from '../../pages/Home/Home/Home';
 import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
 import PrivetRoutes from '../PrivetRoutes/PrivetRoutes';
