@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import CourseCart from '../../../components/CourseCart/CourseCart';
+import Loader from '../../../components/Loader/Loader';
 
 const CoursesSection = () => {
 
@@ -13,10 +14,13 @@ const CoursesSection = () => {
 			return data.slice(0,3)
 		}
 	})
-console.log(courses)
+	console.log(courses)
+	if (isLoading) {
+		return <Loader></Loader>
+	}
 
 	return (
-    <div>
+    <div className='max-w-6xl mx-auto'>
       <h1 className="text-4xl font-bold text-gray-600 text-center my-4 mb-6">
         Our Courses
 			</h1>
