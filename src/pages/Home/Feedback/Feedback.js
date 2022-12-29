@@ -22,6 +22,24 @@ const Feedback = () => {
       message:
         "This website is the very effective for any web development sector student. I am learn more things.",
     },
+    {
+      name: "Nitol Asa",
+      img: "https://i.ibb.co/qxq0HdP/female-user-transparent-icon-d-Otd-VA.png",
+      message:
+        "This website is the very effective for any web development sector student. I am learn more things.",
+    },
+    {
+      name: "Anup Jha",
+      img: "https://i.ibb.co/9wJ2CWd/avatar-user-profile-icon-png-favpng-9e-Tu3u-L6i-Jm-KQsvfh-U4-Nm-BNAB-t.jpg",
+      message:
+        "This website is the very effective for any web development sector student. I am learn more things.",
+    },
+    {
+      name: "Mitali Bothacharjo",
+      img: "https://i.ibb.co/GkrFJ4R/pe-3.jpg",
+      message:
+        "This website is the very effective for any web development sector student. I am learn more things.",
+    },
   ];
 
 

@@ -14,14 +14,14 @@ const Navbar = () => {
       <div className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 
         {/* this navbar active in large device */}
-        <div className="relative flex items-center justify-between">
+        <div className="relative flex items-center py-1 justify-between">
           <Link
             to="/"
             aria-label="Company"
             title="Company"
             className="inline-flex items-center"
           >
-            <img style={{ width: '50px' }} src={logo} alt="" />
+            <img style={{ width: '30px' }} src={logo} alt="" />
             <h4 className='text-3xl font-bold text-gray-700 ml-2'>Web <span className='text-rose-500'>Learner</span></h4>
           </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -114,7 +114,7 @@ const Navbar = () => {
 						    style={({ isActive}) => {
 							    return { color: isActive ?"yellow" :undefined}
 						      }}
-                	className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
+                	className="inline-flex items-center justify-center h-9 px-4 font-medium tracking-wide text-white bg-gray-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-rose-500  focus:shadow-outline focus:outline-none"
                 	aria-label="Sign up"
               		>			
                 	Log in
