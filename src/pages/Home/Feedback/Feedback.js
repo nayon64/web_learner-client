@@ -44,7 +44,7 @@ const Feedback = () => {
 
 
 	return (
-    <div className="mt-24 max-w-6xl mx-auto ">
+    <div className="mt-24 max-w-6xl mx-auto px-4">
       <h1 className="text-4xl font-bold text-gray-600 text-center my-4 mb-6">
         Our Students Feedback
       </h1>
