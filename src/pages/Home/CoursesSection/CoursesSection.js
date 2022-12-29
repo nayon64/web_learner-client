@@ -20,7 +20,7 @@ const CoursesSection = () => {
 	}
 
 	return (
-    <div className='max-w-6xl mx-auto'>
+    <div className='max-w-6xl mt-24 mx-auto'>
       <h1 className="text-4xl font-bold text-gray-600 text-center my-4 mb-6">
         Our Courses
 			</h1>
