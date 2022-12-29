@@ -4,7 +4,7 @@ import ContactForm from './ContactForm';
 const Contact = () => {
 	return (
     <div
-      className="py-12 mt-24 flex justify-center w-screen"
+      className="py-12 mt-24 flex justify-center w-full"
       style={{
         backgroundImage: `url("https://i.ibb.co/QPCnTWr/notepad-3299127-1280.jpg")`,
       }}
